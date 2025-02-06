@@ -16,9 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $tareas_id = $_POST['tareas_id'];
     $titulo = $_POST['titulo'];
     $descripcion = $_POST['descripcion'];
+    $fecha_creacion = $_POST['fecha_creacion'];
     $estado = $_POST['estado'];
 
-    $sql = "UPDATE tareas SET titulo = '$titulo', descripcion = '$descripcion', estado = '$estado' WHERE tareas_id = $tareas_id AND Usuarios_id = $Usuarios_id";
+    $sql = "UPDATE tareas SET titulo = '$titulo', descripcion = '$descripcion',fecha_creacion='$fecha_creacion',estado = '$estado', WHERE tareas_id = $tareas_id AND Usuarios_id = $Usuarios_id";
     $conexion->query($sql);
     header("Location: ver_tareas.php");
 }
@@ -32,6 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <input type="text" id="titulo" name="titulo" value="<?php echo $fila['titulo']; ?>" required>
     <label for="descripcion">Descripción:</label>
     <input type="text" id="descripcion" name="descripcion" value="<?php echo $fila['descripcion']; ?>" required>
+    <label for="fecha_creacion">Fecha de Creación:</label>
+    <input type="date" id="fecha_creacion" name="fecha_creacion" value="<?php echo $fila['fecha_creacion']; ?>" required>
     <label for="estado">Estado:</label>
     <input type="text" id="estado" name="estado" value="<?php echo $fila['estado']; ?>" required>
     <button type="submit">Guardar Cambios</button>

@@ -1,5 +1,6 @@
 <?php
 include("conexiondb.php");
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener los datos del formulario
     $username = $_POST["username"];

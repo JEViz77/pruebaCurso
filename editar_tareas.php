@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $sql = "UPDATE tareas SET titulo = '$titulo', descripcion = '$descripcion', estado = '$estado' WHERE tareas_id = $tareas_id AND Usuarios_id = $Usuarios_id";
     $conexion->query($sql);
-    header("Location: tareas.php");
+    header("Location: ver_tareas.php");
 }
 ?>
 
